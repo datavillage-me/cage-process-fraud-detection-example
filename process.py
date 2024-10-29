@@ -149,7 +149,7 @@ def process_infer_event(evt: dict):
     # Find the directory in which the current script resides:
     file_dir = os.path.dirname(os.path.realpath(__file__))
 
-    bst.load_model("/resources/data/model.json")
+    bst.load_model("/resources/outputs/model.json")
 
     logger.info(f"|    AI model loaded                             |")
     logger.info(f"|                                                |")
@@ -164,16 +164,15 @@ def process_infer_event(evt: dict):
         # make a model inference for the given features
 
         pred = bst.predict([X])[0]
-        logger.info(f"|    Prediction done                             |")
-        
-        logger.info(f"|                                                |")
-        logger.info(f"| 4. Save outputs of the collaboration           |")
 
-        with open('/resources/outputs/fraud-score.json', 'w', newline='') as file:
-            file.write('{"UETR": "'+row['UETR']+'","class": "'+str(pred)+'"}')
-        logger.info(f"| 3. Save fraud-score                            |")
-        logger.info(f"|                                                |")
-        logger.info(f"--------------------------------------------------")
+    logger.info(f"|    Prediction done                             |")
+    logger.info(f"|                                                |")
+    logger.info(f"| 4. Save outputs of the collaboration           |")
+
+    with open('/resources/outputs/fraud-score.json', 'w', newline='') as file:
+        file.write('{"UETR": "'+row['UETR']+'","class": "'+str(pred)+'"}')
+    logger.info(f"|                                                |")
+    logger.info(f"--------------------------------------------------")
 
 
 def RunModel(model, X_train, y_train, X_test, y_test):
