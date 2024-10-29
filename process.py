@@ -149,7 +149,7 @@ def process_infer_event(evt: dict):
     # Find the directory in which the current script resides:
     file_dir = os.path.dirname(os.path.realpath(__file__))
 
-    bst.load_model("/resources/outputs/classification-report.json")
+    bst.load_model("/resources/outputs/model.json")
 
     logger.info(f"|    AI model loaded                             |")
     logger.info(f"|                                                |")
