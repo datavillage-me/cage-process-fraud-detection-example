@@ -182,8 +182,16 @@ def RunModel(model, X_train, y_train, X_test, y_test):
     return matrix, pred
 
 if __name__ == "__main__":
+    # test_event = {
+    #         'type': 'INFER',
+    #         'UETR': 'a1d960fa-c233-43d6-aaf4-ac99b04c41fc'
+    # }
+
+    # process_infer_event(test_event)
+
     test_event = {
-            'type': 'INFER',
-            'UETR': 'a1d960fa-c233-43d6-aaf4-ac99b04c41fc'
+            'type': 'TRAIN'
     }
-    process_infer_event(test_event)
+
+    process_train_event(test_event)
+    

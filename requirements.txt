@@ -1,6 +1,6 @@
 #take dv-utils either from github or from pypi
 #git+https://github.com/datavillage-me/dv-utils@main#egg=dv-utils
-dv-utils>=0.2.2
+dv-utils>=1.0.1
 pandas
 openpyxl
 xgboost
@@ -8,4 +8,4 @@ scikit-learn
 numpy
 matplotlib
 seaborn
-duckdb==0.10.1
+duckdb==1.0.0
