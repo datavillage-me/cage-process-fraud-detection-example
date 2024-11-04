@@ -146,7 +146,7 @@ def process_infer_event(evt: dict):
 
 
     
-    bst.load_model("/resources/outputs/model.json")
+    bst.load_model("/resources/data/model.json")
 
     logger.info(f"|    AI model loaded                             |")
     logger.info(f"|                                                |")
